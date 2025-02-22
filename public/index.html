@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Voice Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            
+            <h1 class="title">Smart Voice Assistant</h1>
+            <p class="subtitle">Record, Transcribe, Summarize and Analyze</p>
+        </div>
+
+        <!-- Recording Controls -->
+        <div class="control-panel">
+            <div class="recording-controls">
+                <button id="startRecording" class="btn primary">
+                    <span class="icon">🎤</span> Let's Record
+                </button>
+                <button id="stopRecording" class="btn secondary" disabled>
+                    <span class="icon">⏹</span> Stop Recording
+                </button>
+            </div>
+            <div class="status" id="status">  </div>
+        </div>
+
+        <!-- Transcription Section -->
+        <div class="transcription-section">
+            <!-- <h2>Real-time Transcription</h2> -->
+            <div class="transcription-container">
+                <div id="transcriptionText" class="transcription-box">
+                    Transcription....
+                </div>
+            </div>
+        </div>
+
+        <!-- Analysis Controls -->
+        <div class="analysis-controls">
+            <button id="summarizeBtn" class="btn analysis-btn" disabled>
+                <span class="icon">📝</span> Summarize 
+            </button>
+            <button id="analyzeBtn" class="btn analysis-btn" disabled>
+                <span class="icon">📊</span> Analyze
+            </button>
+        </div>
+        <!-- Add after analysis-controls div -->
+<div class="action-buttons">
+    <button id="clearBtn" class="btn action-btn">
+        <span class="icon">🗑️</span> Clear All
+    </button>
+    <button id="exportBtn" class="btn action-btn">
+        <span class="icon">📄</span> Export as PDF
+    </button>
+</div>
+
+        <!-- Results Section -->
+        <div id="summarySection" class="result-section hidden">
+            <h2>Overall Summary</h2>
+            <div id="summaryContent" class="result-box"></div>
+        </div>
+
+        <div id="analysisSection" class="result-section hidden">
+            <h2>Analysis Results</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tasks">📋 To Do List</button>
+                <button class="tab-btn" data-tab="events">📅 Events</button>
+                <button class="tab-btn" data-tab="notes">📝 Notes</button>
+            </div>
+            <div class="tab-content-container">
+                <div id="tasks" class="tab-content active"></div>
+                <div id="events" class="tab-content"></div>
+                <div id="notes" class="tab-content"></div>
+            </div>
+        </div>
+        <!-- Footer -->
+
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-text">Made with <span class="heart">♥</span> by Mohammad Zaid</p>
+        <div class="social-links">
+            <a href="https://github.com/MohammadZaid1231" target="_blank" class="social-link">
+                <span class="icon"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="width: 20px; height: 20px;"></span> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/zaidparvaiz/" target="_blank" class="social-link">
+                <span class="icon"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo" style="width: 20px; height: 20px;"></span> LinkedIn
+            </a>
+        </div>
+        <p class="copyright">© 2025 Voice Assistant | All Rights Reserved</p>
+    </div>
+</footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loader"></div>
+        <p id="loadingText">Processing...</p>
+    </div>
+
+    <script src="bundle.js"></script>
+</body>
+</html>
+
+<!-- main code -->
+ 
