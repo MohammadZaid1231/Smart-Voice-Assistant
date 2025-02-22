@@ -1,4 +1,4 @@
-Voice-Assistant
+Smart-Voice-Assistant
 🌟 Overview
 Smart Voice Assistant is a modern web application that transforms your speech into organized, actionable insights. With a sleek UI and powerful features, it enables effortless voice-to-text conversion, smart categorization, and content summarization.
 
