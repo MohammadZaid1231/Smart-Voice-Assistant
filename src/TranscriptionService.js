@@ -3,12 +3,15 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export class TranscriptionService {
     constructor() {
-        const apiKey = process.env.GEMINI_API_KEY;
+        // Use the provided API key directly or from environment variable
+        const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyD2T54lYTcnH1e5k2YZP4s7t8jO0YOI-dY';
         if (!apiKey) {
             console.error('Gemini API key is not set');
+            throw new Error('Gemini API key is required');
         }
         this.genAI = new GoogleGenerativeAI(apiKey);
-        this.model = this.genAI.getGenerativeModel({ model: "gemini-pro" });
+        // Updated to use correct model name - try gemini-1.5-flash first, then gemini-2.0-flash as fallback
+        this.model = this.genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     }
 
     async summarizeContent(transcript) {
@@ -25,6 +28,14 @@ export class TranscriptionService {
             return response.text();
         } catch (error) {
             console.error('Summarization error:', error);
+            // If gemini-1.5-flash fails, try with gemini-2.0-flash
+            if (error.message && error.message.includes('not found')) {
+                console.log('Trying with gemini-2.0-flash model...');
+                this.model = this.genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+                const result = await this.model.generateContent(prompt);
+                const response = await result.response;
+                return response.text();
+            }
             throw error;
         }
     }
@@ -48,6 +59,14 @@ export class TranscriptionService {
             return this.parseAnalysis(response.text());
         } catch (error) {
             console.error('Analysis error:', error);
+            // If gemini-1.5-flash fails, try with gemini-2.0-flash
+            if (error.message && error.message.includes('not found')) {
+                console.log('Trying with gemini-2.0-flash model...');
+                this.model = this.genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+                const result = await this.model.generateContent(prompt);
+                const response = await result.response;
+                return this.parseAnalysis(response.text());
+            }
             throw error;
         }
     }
@@ -71,6 +90,14 @@ export class TranscriptionService {
             return response.text();
         } catch (error) {
             console.error('Enhanced summary error:', error);
+            // If gemini-1.5-flash fails, try with gemini-2.0-flash
+            if (error.message && error.message.includes('not found')) {
+                console.log('Trying with gemini-2.0-flash model...');
+                this.model = this.genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+                const result = await this.model.generateContent(prompt);
+                const response = await result.response;
+                return response.text();
+            }
             throw error;
         }
     }
