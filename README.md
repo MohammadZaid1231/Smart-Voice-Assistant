@@ -3,6 +3,9 @@
 <p align="center"><em>A modern web application that transforms your speech into organized, actionable insights.</em></p>
 
 <p align="center">
+  <a href="https://smart-voice-assistant-9mtitdemr-jeetsam464-gmailcoms-projects.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/Live-Demo-00C853?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo Badge">
+  </a>
   <img src="https://img.shields.io/badge/Status-Complete-brightgreen?style=flat-square" alt="Project Status">
   <img src="https://img.shields.io/badge/Tech-HTML%2FCSS%2FJS-blueviolet?style=flat-square" alt="Tech Stack">
 </p>
@@ -89,6 +92,16 @@ Smart Voice Assistant is a modern web application that transforms your speech in
 
 ---
 
+<h2>🚀 Live Demo</h2>
+
+<p align="center">
+  <a href="https://smart-voice-assistant-9mtitdemr-jeetsam464-gmailcoms-projects.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/Try%20it%20Now-Click%20Here-blueviolet?style=for-the-badge&logo=vercel" alt="Live Demo Link">
+  </a>
+</p>
+
+---
+
 <h2>👨‍💻 Author</h2>
 
 <p>
@@ -105,4 +118,4 @@ Smart Voice Assistant is a modern web application that transforms your speech in
   <li>🤖 Google Gemini AI Team</li>
 </ul>
 
-<p align="center">Made with ❤️ by Mohammad
+<p align="center">Made with ❤️ by Mohammad Zaid</p>
